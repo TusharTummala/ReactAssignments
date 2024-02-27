@@ -5,7 +5,7 @@
 import React, { useState } from 'react';
 
 const PersonList = ({ persons, showPersons }) => {
-  // PersonCard component
+  
   const PersonCard = ({ person }) => {
     return (
       <div className="col-md-4 mb-4">
@@ -47,13 +47,13 @@ const PersonList = ({ persons, showPersons }) => {
   );
 };
 
-// Parent component
+
 const ParentComponent = () => {
   const [persons, setPersons] = useState([]);
 
-  // Function to fetch persons (replace with actual API call)
+ 
   const fetchPersons = () => {
-    // Simulated API call to fetch persons
+    
     setTimeout(() => {
       setPersons([
         {

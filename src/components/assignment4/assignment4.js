@@ -248,7 +248,7 @@ const products = [
 
 const ProductList = () => {
   return (
-    // <div className="card-container">
+   
     <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between" }}>
       {products.map((product) => (
         <ProductCard key={product.id} product={product} />

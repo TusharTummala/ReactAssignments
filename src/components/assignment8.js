@@ -1,15 +1,14 @@
 import React, { createContext, useContext, useReducer, useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
 
-// Create TodoContext
+
+
 const TodoContext = createContext();
 
-// Custom hook to use TodoContext
+
 export const useTodoContext = () => {
   return useContext(TodoContext);
 };
 
-// Todo reducer
 const todoReducer = (state, action) => {
   switch (action.type) {
     case 'ADD_TODO':
@@ -25,7 +24,6 @@ const todoReducer = (state, action) => {
   }
 };
 
-// TodoProvider component
 const TodoProvider = ({ children }) => {
   const [todos, dispatch] = useReducer(todoReducer, []);
 
@@ -36,7 +34,7 @@ const TodoProvider = ({ children }) => {
   );
 };
 
-// TodoInputComponent
+
 const TodoInputComponent = () => {
   const { dispatch } = useTodoContext();
   const [text, setText] = useState('');
@@ -54,7 +52,7 @@ const TodoInputComponent = () => {
       <form onSubmit={handleSubmit} className="input-group">
         <input
           type="text"
-          className="form-control w-75" // Set width to 75% for better proportions
+          className="form-control w-75" 
           value={text}
           onChange={(e) => setText(e.target.value)}
           placeholder="Add a new todo..."
@@ -68,7 +66,7 @@ const TodoInputComponent = () => {
   );
 };
 
-// TasksAllottedComponent
+
 const TasksAllottedComponent = () => {
   const { todos } = useTodoContext();
   const { dispatch } = useTodoContext();
@@ -118,7 +116,6 @@ const TasksAllottedComponent = () => {
   );
 };
 
-// TasksDoneComponent
 const TasksDoneComponent = () => {
   const { todos } = useTodoContext();
 
@@ -141,7 +138,7 @@ const TasksDoneComponent = () => {
   );
 };
 
-// TodoComponent
+
 const TodoComponent = () => {
   return (
     <div className="container mt-5">
@@ -164,7 +161,7 @@ const TodoComponent = () => {
   );
 };
 
-// Combined Assignment8 component
+
 const Assignment8 = () => {
   return (
     <TodoProvider>
